@@ -18,6 +18,13 @@
                         <form action="" id="loginForm" method='post'>
                             {% csrf_token %}
                             <div class="row">
+                                {% if messages %}
+                                  <ul>
+                                    {% for message in messages %}
+                                      <li>{{ message }}</li>
+                                    {% endfor %}
+                                  </ul>
+                                {% endif %}
                                 <div class="form-group col-lg-12">
                                     <label>Username</label>
                                     {{ forms.username }}
