@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="en">
+{% load static %} {% include 'base/header.html' %}
+
+<body>
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <div class="error-pagewrap">
+        <div class="error-page-int">
+            <div class="text-center custom-login">
+                <h3>Registration</h3>
+                <p>This is the best app ever!</p>
+            </div>
+            <div class="content-error">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <form action="" id="loginForm" method='post'>
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="form-group col-lg-12">
+                                    <label>Username</label>
+                                    {{ forms.username }}
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Password</label>
+                                    {{ forms.password }}
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Repeat Password</label>
+                                    {{ forms.confirm_password }}
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Email Address</label>
+                                    {{ forms.email }}
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Repeat Email Address</label>
+                                    {{ forms.confirm_email }}
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success loginbtn">Register</button>
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center login-footer">
+                <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">Colorlib</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- jquery -->
+    {% include 'base/js.html' %}
+
+</body>
+
+</html>
