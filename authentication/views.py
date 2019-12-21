@@ -12,7 +12,7 @@ def user_registration(request):
         forms = RegistrationForm(request.POST)
         if forms.is_valid():
             forms.save()
-            messages.success(request, 'Account created successfully!')
+            messages.success(request, 'Account created successfully!') # don`t sure how it works?
             return redirect('home')
     else:
         forms = RegistrationForm()

@@ -18,17 +18,12 @@
                         <form action="" id="loginForm" method='post'>
                             {% csrf_token %}
                             <div class="row">
-                                {% if messages %}
-                                  <ul>
-                                    {% for message in messages %}
-                                      <li>{{ message }}</li>
-                                    {% endfor %}
-                                  </ul>
-                                {% endif %}
                                 <div class="form-group col-lg-12">
+                                    <span class="text-danger">{{ forms.username.errors }}</span>
                                     <label>Username</label>
                                     {{ forms.username }}
                                 </div>
+                                <span class="text-danger">{{ forms.confirm_password.errors }}</span>
                                 <div class="form-group col-lg-6">
                                     <label>Password</label>
                                     {{ forms.password }}
@@ -37,6 +32,7 @@
                                     <label>Repeat Password</label>
                                     {{ forms.confirm_password }}
                                 </div>
+                                <span class="text-danger">{{ forms.confirm_email.errors }}</span>
                                 <div class="form-group col-lg-6">
                                     <label>Email Address</label>
                                     {{ forms.email }}
