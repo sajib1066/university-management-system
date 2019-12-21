@@ -64,3 +64,10 @@ class LoginForm(forms.Form):
         'placeholder': '********',
         'title': "Please enter you password"
     })))
+
+    def clean_username(self):
+        username = self.cleaned_data['username'].lower()
+        r = User.objects.filter(username=username)
+        if r.count() == 0:
+            raise ValidationError('Username not exists!')
+        return username

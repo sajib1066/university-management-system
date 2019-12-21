@@ -22,7 +22,7 @@ def user_registration(request):
     return render(request, 'auth/registration.html', context)
 
 def user_login(request):
-    forms = LoginForm()
+    pass_err = ''
     if request.method == 'POST':
         forms = LoginForm(request.POST)
         if forms.is_valid():
@@ -32,8 +32,13 @@ def user_login(request):
             if user:
                 login(request, user)
                 return redirect('home')
+            else:
+                pass_err = 'Password don`t match!'
+    else:
+        forms = LoginForm()
     context = {
-        'forms': forms
+        'forms': forms,
+        'pass_err': pass_err
     }
     return render(request, 'auth/login.html', context)
 

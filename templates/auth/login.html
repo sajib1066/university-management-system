@@ -15,10 +15,14 @@
                         <form action="" id="loginForm" method="post">
                             {% csrf_token %}
                             <div class="form-group">
+                                <span class="text-danger">{{ forms.username.errors }}</span>
                                 <label class="control-label" for="username">Username</label>
                                 {{ forms.username }}
                             </div>
                             <div class="form-group">
+                                <p>
+                                  <span class="text-danger">{{ pass_err }}</span>
+                                </p>
                                 <label class="control-label" for="password">Password</label>
                                 {{ forms.password }}
                             </div>
