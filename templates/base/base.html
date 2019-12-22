@@ -21,6 +21,13 @@
             </div>
         </div>
         {% include 'base/navbar.html' %}
+
+        <div class="row">
+          {% block content %}
+
+          {% endblock %}
+        </div>
+
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
