@@ -8,11 +8,7 @@ def add_faculty(request):
         forms = FacultyForm(request.POST)
         print(request.POST)
         if forms.is_valid():
-            name = forms.cleaned_data['name']
-            established = forms.cleaned_data['established']
-            photo = forms.cleaned_data['photo']
-            about = forms.cleaned_data['about']
-            Faculty.objects.create(name=name, established=established, photo=photo, about=about, status=False)
+            forms.save()
             return redirect('home')
 
     context = {
