@@ -14,3 +14,10 @@ def add_faculty(request):
         'forms': forms
     }
     return render(request, 'faculty/add-faculty.html', context)
+
+def faculty_list(request):
+    faculty = Faculty.objects.all()
+    context = {
+        'faculty': faculty
+    }
+    return render(request, 'faculty/faculty-list.html', context)
