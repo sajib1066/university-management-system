@@ -8,7 +8,7 @@ def add_faculty(request):
         forms = FacultyForm(request.POST, request.FILES)
         if forms.is_valid():
             forms.save()
-            return redirect('home')
+            return redirect('faculty-list')
 
     context = {
         'forms': forms
