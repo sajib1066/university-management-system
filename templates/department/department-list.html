@@ -1,0 +1,56 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="product-status-wrap drp-lst">
+        <h4>Departments List</h4>
+        <div class="add-product">
+            <a href="{% url 'add-department' %}">Add Department</a>
+        </div>
+        <div class="asset-inner">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>No</th>
+                        <th>Name of Department</th>
+                        <th>Status</th>
+                        <th>Head</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>No. of Students</th>
+                        <th>Setting</th>
+                    </tr>
+                    {% for dept in department %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ dept.name }}</td>
+                        <td>
+                            <button class="pd-setting">{{ dept.status }}</button>
+                        </td>
+                        <td>{{ dept.name_of_head }}</td>
+                        <td>{{ dept.email }}</td>
+                        <td>{{ dept.phone }}</td>
+                        <td>1500</td>
+                        <td>
+                            <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                            <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="custom-pagination">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
