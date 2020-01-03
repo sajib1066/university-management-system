@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+def add_department(request):
+    context = {
+        
+    }
+    return render(request, 'department/add-department.html', context)
