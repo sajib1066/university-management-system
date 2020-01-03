@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomeView.as_view(), name='home'),
     path('auth/', include('authentication.urls')),
-    path('academic/', include('academic.urls'))
+    path('faculty/', include('faculty.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
