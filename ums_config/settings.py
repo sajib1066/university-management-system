@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'authentication',
     'faculty',
     'department',
+    'professor',
 ]
 
 MIDDLEWARE = [
