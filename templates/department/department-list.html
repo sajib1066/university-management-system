@@ -25,7 +25,13 @@
                         <td>{{ forloop.counter }}</td>
                         <td>{{ dept.name }}</td>
                         <td>
-                            <button class="pd-setting">{{ dept.status }}</button>
+                          {% if dept.status == 'active' %}
+                            <button class="pd-setting">{{ dept.status|upper }}</button>
+                          {% elif dept.status == 'disabled' %}
+                            <button class="ds-setting">{{ dept.status|upper }}</button>
+                          {% elif dept.status == 'paused' %}
+                            <button class="ps-setting">{{ dept.status|upper }}</button>
+                          {% endif %}
                         </td>
                         <td>{{ dept.name_of_head }}</td>
                         <td>{{ dept.email }}</td>
