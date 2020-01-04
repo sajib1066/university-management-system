@@ -5,7 +5,7 @@ from .models import Faculty
 def add_faculty(request):
     forms = FacultyForm()
     if request.method == 'POST':
-        forms = FacultyForm(request.POST, request.FILES)
+        forms = FacultyForm(request.POST)
         if forms.is_valid():
             forms.save()
             return redirect('faculty-list')

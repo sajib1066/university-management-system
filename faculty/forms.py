@@ -8,6 +8,6 @@ class FacultyForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Name"}),
             'established': forms.SelectDateWidget(),
-            'photo': forms.FileInput(attrs={'class': 'form-control'}),
+            'status': forms.Select(attrs={'class': 'form-control'}),
             'about': forms.Textarea(attrs={'class': 'form-control', 'placeholder': "About"})
         }
