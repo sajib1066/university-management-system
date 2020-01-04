@@ -26,11 +26,11 @@
                         <td>{{ faculty.name }}</td>
                         <td>
                             {% if faculty.status == 'active' %}
-                            <button class="pd-setting">{{ faculty.status|upper }}</button>
+                            <button class="pd-setting">{{ faculty.status|title }}</button>
                             {% elif faculty.status == 'disabled' %}
-                            <button class="ds-setting">{{ faculty.status|upper }}</button>
+                            <button class="ds-setting">{{ faculty.status|title }}</button>
                             {% elif faculty.status == 'paused' %}
-                            <button class="ps-setting">{{ faculty.status|upper }}</button>
+                            <button class="ps-setting">{{ faculty.status|title }}</button>
                             {% endif %}
                         </td>
                         <td>John Alva</td>

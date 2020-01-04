@@ -26,11 +26,11 @@
                         <td>{{ dept.name }}</td>
                         <td>
                           {% if dept.status == 'active' %}
-                            <button class="pd-setting">{{ dept.status|upper }}</button>
+                            <button class="pd-setting">{{ dept.status|title }}</button>
                           {% elif dept.status == 'disabled' %}
-                            <button class="ds-setting">{{ dept.status|upper }}</button>
+                            <button class="ds-setting">{{ dept.status|title }}</button>
                           {% elif dept.status == 'paused' %}
-                            <button class="ps-setting">{{ dept.status|upper }}</button>
+                            <button class="ps-setting">{{ dept.status|title }}</button>
                           {% endif %}
                         </td>
                         <td>{{ dept.name_of_head }}</td>
