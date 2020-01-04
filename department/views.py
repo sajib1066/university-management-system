@@ -15,7 +15,7 @@ def add_department(request):
     return render(request, 'department/add-department.html', context)
 
 def department_list(request):
-    department = Department.objects.all()
+    department = Department.objects.filter(is_delete=False)
     context = {
         'department': department
     }
@@ -33,3 +33,9 @@ def edit_department(request, department_id):
         'form': forms
     }
     return render(request, 'department/edit-department.html', context)
+
+def delete_department(request, department_id):
+    department = Department.objects.get(id=department_id)
+    department.is_delete = True
+    department.save()
+    return redirect('department-list')

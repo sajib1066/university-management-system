@@ -41,7 +41,7 @@
                             <a href="{% url 'edit-department' dept.id %}">
                               <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                             </a>
-                            <a href="#">
+                            <a href="{% url 'delete-department' dept.id %}">
                               <button data-toggle="tooltip" title="" class="pd-setting-ed" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                             </a>
                         </td>
