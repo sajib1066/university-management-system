@@ -14,6 +14,7 @@ class Department(models.Model):
     )
     status = models.CharField(choices=status_choice, max_length=20)
     opening_date = models.DateField()
+    is_delete = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
