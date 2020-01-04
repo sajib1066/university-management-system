@@ -16,7 +16,7 @@ def add_faculty(request):
     return render(request, 'faculty/add-faculty.html', context)
 
 def faculty_list(request):
-    faculty = Faculty.objects.all()
+    faculty = Faculty.objects.filter(is_delete=False)
     context = {
         'faculty': faculty
     }
@@ -34,3 +34,9 @@ def edit_faculty(request, faculty_id):
         'forms': forms
     }
     return render(request, 'faculty/edit-faculty.html', context)
+
+def delete_faculty(request, faculty_id):
+    faculty = Faculty.objects.get(id=faculty_id)
+    faculty.is_delete = True
+    faculty.save()
+    return redirect('faculty-list')
