@@ -20,3 +20,16 @@ def department_list(request):
         'department': department
     }
     return render(request, 'department/department-list.html', context)
+
+def edit_department(request, department_id):
+    department = Department.objects.get(id=department_id)
+    forms = DepartmentForm(instance=department)
+    if request.method == 'POST':
+        forms = DepartmentForm(request.POST, instance=department)
+        if forms.is_valid():
+            forms.save()
+            return redirect('department-list')
+    context = {
+        'form': forms
+    }
+    return render(request, 'department/edit-department.html', context)
