@@ -11,6 +11,7 @@ class Designation(models.Model):
 
 class Professor(models.Model):
     name = models.CharField(max_length=120)
+    photo = models.ImageField(upload_to='professor/')
     phone = models.CharField(max_length=11, unique=True)
     email = models.EmailField(max_length=120, unique=True)
     date_of_birth = models.DateField()
@@ -28,6 +29,8 @@ class Professor(models.Model):
     state = models.ForeignKey(State, on_delete=models.CASCADE)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
     website = models.URLField(blank=True, null=True)
+    join_date = models.DateField()
+    is_delete = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
